@@ -1,3 +1,5 @@
+![alt text](issue.png "Issue")
+
 # Nova Application Setup Guide
 
 This guide provides instructions on setting up the Nova application, creating a new user, and outlines a current issue within the Nova User Resource.
