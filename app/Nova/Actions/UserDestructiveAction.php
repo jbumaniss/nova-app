@@ -8,7 +8,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Actions\ActionResponse;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Support\Collection;
 
 class UserDestructiveAction extends Action
