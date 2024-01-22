@@ -68,3 +68,11 @@ $user->save();
 - Username: johndoes@example.com
 
 - Password: password
+
+## Branch Information for `nova-app`
+
+### Main Branch
+In the `main` branch of `nova-app`, we maintain a clean installation of Nova. Here, the Nova User Resource functions as intended, consistent with the default behavior of a fresh Nova setup. This branch serves as a reference point for standard functionality and can be used for comparative analysis.
+
+### Issue Branch
+The `issue` branch of `nova-app` diverges from the clean installation. In this branch, the Nova User Resource exhibits non-standard behavior, differing from the expected functionality in a typical Nova setup. This branch is specifically dedicated to investigating and addressing the identified issues with the Nova User Resource actions.
