@@ -26,16 +26,4 @@ class UserActivateAction extends Action
     {
        return Action::message(__('The user was activated successfully.'));
     }
-
-    public static function register(): self
-    {
-        /** @var UserActivateAction $action */
-        $action = resolve(self::class);
-
-        return $action->exceptOnIndex()
-            ->confirmText(__('Are you sure you want to use this action?'))
-            ->canRun(function (NovaRequest $request, User $user) {
-                return false;
-            });
-    }
 }

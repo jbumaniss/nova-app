@@ -5,7 +5,11 @@ namespace App\Nova;
 use App\Nova\Actions\UserActivateAction;
 use App\Nova\Actions\UserDeactivateAction;
 use App\Nova\Actions\UserDestructiveAction;
+use Illuminate\Support\Collection;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Actions\Action;
+use Laravel\Nova\Actions\ActionResponse;
+use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -109,9 +113,15 @@ class User extends Resource
     public function actions(NovaRequest $request): array
     {
         return [
-            UserActivateAction::register(),
-            UserDeactivateAction::register(),
-            UserDestructiveAction::register(),
+        UserActivateAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+                return false;
+            }),
+        UserDeactivateAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+                return false;
+            }),
+        UserDestructiveAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+                return false;
+            }),
         ];
     }
 }

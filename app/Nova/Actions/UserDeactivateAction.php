@@ -26,16 +26,4 @@ class UserDeactivateAction extends Action
     {
        return Action::message(__('The user was deactivated successfully.'));
     }
-
-    public static function register(): self
-    {
-        /** @var UserDeactivateAction $action */
-        $action = resolve(self::class);
-
-        return $action->exceptOnIndex()
-            ->confirmText(__('Are you sure you want to use this action?'))
-            ->canRun(function (NovaRequest $request, User $user) {
-                return false;
-            });
-    }
 }
