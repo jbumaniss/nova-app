@@ -109,13 +109,13 @@ class User extends Resource
     public function actions(NovaRequest $request): array
     {
         return [
-        UserActivateAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+        UserActivateAction::make()->exceptOnIndex()->canRun(function (NovaRequest $request, \App\Models\User $user) {
                 return false;
             }),
-        UserDeactivateAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+        UserDeactivateAction::make()->exceptOnIndex()->canRun(function (NovaRequest $request, \App\Models\User $user) {
                 return false;
             }),
-        UserDestructiveAction::make()->canRun(function (NovaRequest $request, \App\Models\User $user) {
+        UserDestructiveAction::make()->exceptOnIndex()->canRun(function (NovaRequest $request, \App\Models\User $user) {
                 return false;
             }),
         ];
