@@ -69,19 +69,10 @@ $user->save();
 
 - Password: password
 
-### Issue in Nova User Resource
+## Branch Information for `nova-app`
 
-#### Description
-Within the Nova User Resource, three actions have been created. Each action's canRun() method is set to return false, implying that all actions should be disabled in the UI.
+### Main Branch
+In the `main` branch of `nova-app`, we maintain a clean installation of Nova. Here, the Nova User Resource functions as intended, consistent with the default behavior of a fresh Nova setup. This branch serves as a reference point for standard functionality and can be used for comparative analysis.
 
-#### Observed behavior
-- Only the first action is disabled, as expected
-- The other two actions remain enabled
-- If the first action is commented out, the second one gets disabled, but third remains enabled
-
-#### Expected behavior
-All 3 actions should be disabled in the UI if their canRun() method returns false
-
-### Additional Observation
-It has been noted that in the list view, all three actions are correctly hidden, aligning with the expected behavior. However, it's important to highlight a potential inconsistency: according to the latest Nova guidelines, actions that are not permitted should ideally be shown in a disabled state rather than being hidden. This distinction is crucial for maintaining a consistent and intuitive user interface. We kindly suggest revisiting this aspect to ensure alignment with Nova's best practices.
-
+### Issue Branch
+The `issue` branch of `nova-app` diverges from the clean installation. In this branch, the Nova User Resource exhibits non-standard behavior, differing from the expected functionality in a typical Nova setup. This branch is specifically dedicated to investigating and addressing the identified issues with the Nova User Resource actions.
